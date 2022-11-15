@@ -63,6 +63,7 @@ async def next_page(bot, query):
     except:
         n_offset = 0
 
+    
     if not files:
         return
     settings = await get_settings(query.message.chat.id)
@@ -70,7 +71,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"➠ {get_size(file.file_size)} ➠ {file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -97,31 +98,39 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(text=f"Check PM!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton(f"📃 {round(int(offset) / 10) + 1} / {round(total / 10)}",
+            [InlineKeyboardButton("🔙 Back Page", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}"),
+             InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
+            [InlineKeyboardButton(text="Next Page ➡", callback_data=f"next_{req}_{key}_{offset}")]
+        )    
+        btn.append(
             [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text=f"Check PM!", url=f"https://t.me/{temp.U_NAME}"),
-             InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+             InlineKeyboardButton("🗑️", callback_data="close"),
+             InlineKeyboardButton("⚠️ Faq", callback_data="faq")]
+        )
+        btn.append(
+                [InlineKeyboardButton(text="📂 Get All Files 📂", callback_data='get')]
+        )
+        btn.append(
+                [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")]
+        )
     else:
         btn.append(
             [
-                InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton("🔙 Back Page", callback_data=f"next_{req}_{key}_{off_set}"),
                 InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")]
+                InlineKeyboardButton("Next Page ➡", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
-    btn.insert(0,
-            [
-                InlineKeyboardButton("⭕️ Movie", url="https://t.me/+26XbUS8O3cM1MDU1"),
-                InlineKeyboardButton("Series ⭕️", url="https://t.me/+VWYQKLaIim4yNjk1")
-            ])
-
     btn.insert(0, [
-        InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
+        InlineKeyboardButton(text="ミ★ ITS UNIQUE MOVIES ★彡", callback_data="rsrq"),
+    ])
+    btn.insert(0, [
+        InlineKeyboardButton(text="📂 Get All Files 📂", callback_data=f'get'),
+        InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")
     ])
     try:
         await query.edit_message_reply_markup(
@@ -160,7 +169,7 @@ async def advantage_spoll_choker(bot, query):
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
-    if query.data == "close_data":
+    if query.data == "close":
         await query.message.delete()
         try:
             await query.message.reply_to_message.delete()
@@ -291,6 +300,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 parse_mode="md"
             )
         return await query.answer('Piracy Is Crime')
+    elif "rsrq" in query.data:
+        return await query.answer("""
+ミ★ ITS UNIQUE MOVIES ★彡
+☞ Sᴛᴏʀᴀɢᴇ Oғ Nᴇᴡ & Oʟᴅ Mᴏᴠɪᴇs/Sᴇʀɪᴇs
+☞ Aᴠᴀɪʟᴀʙʟᴇ Iɴ Mᴀɴʏ Sɪᴢᴇs & Lᴀɴɢᴜᴀɢᴇs
+☞ Rᴇᴄᴇɪᴠᴀʙʟᴇ Iɴ Vᴀʀɪᴏᴜs Qᴜᴀʟɪᴛʏ
+👑
+ITS UNIQUE MOVIES 
+""", show_alert=True)
+
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -380,16 +399,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-        buttons = [
-            [
-                InlineKeyboardButton('⭕️ Support', url='https://t.me/JOSPSupport'),
-                InlineKeyboardButton('Channel ⭕️', url='https://t.me/JosProjects')
-            ],
-            [
-                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/+y53tWFUw6Q43NzE9')
-            ]
-            ]
-
+        buttons = [[
+               InlineKeyboardButton('🎥 TK HD Hub', url='https://t.me/+4yoDh0x8j80wOTVl'),
+               InlineKeyboardButton('🎥 TK HP Hub', url='https://t.me/+oRO-NDOF4LU4ZjRl')
+               ],[
+               InlineKeyboardButton(text="⁉️ Want To Save/Share This File", callback_data="scst")
+               ],[
+               InlineKeyboardButton('🗑 Close File', callback_data='close')]]
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
@@ -434,15 +450,26 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
-        buttons = [
-            [
-                InlineKeyboardButton('⭕️ Support', url='https://t.me/JOSPSupport'),
-                InlineKeyboardButton('Channel ⭕️', url='https://t.me/JosProjects')
-            ],
-            [
-                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/+y53tWFUw6Q43NzE9')
-            ]
-            ]
+        buttons = [[
+               InlineKeyboardButton('🎥 TK HD Hub', url='https://t.me/+4yoDh0x8j80wOTVl'),
+               InlineKeyboardButton('🎥 TK HP Hub', url='https://t.me/+oRO-NDOF4LU4ZjRl')
+               ],[
+               InlineKeyboardButton(text="⁉️ Want To Save/Share This File", callback_data="scst")
+               ],[
+               InlineKeyboardButton('🗑 Close File', callback_data='close')]]
+    elif "scst" in query.data:
+        return await query.answer("""
+» HERE IS THE SOLUTION «
+
+☞ Send Me Rs.50/- Per Month With Payment Proof
+
+UPI 🆔 Details
+
+Gpay 📲 joynathnet4@oksbi
+Phonepe 📲 Soon...
+
+✔️ After Payment Verification Your ID Well Be Freed
+""", show_alert=True)
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
