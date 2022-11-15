@@ -36,9 +36,63 @@ async def save_group(bot, message):
                 pass
             await bot.leave_chat(message.chat.id)
             return
+        TGDarkLord
+/
+UniqueMovie-Bot
+Public
+forked from JOSProjects/IMDb-Movie-Bot
+Code
+Pull requests
+Actions
+Projects
+Security
+Insights
+UniqueMovie-Bot/plugins/p_ttishow.py
+@TGDarkLord
+TGDarkLord Update p_ttishow.py
+ 2 contributors
+278 lines (257 sloc)  11.4 KB
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
+from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS
+from database.users_chats_db import db
+from database.ia_filterdb import Media
+from utils import get_size, temp, get_settings
+from script import Script
+from pyrogram.errors import ChatAdminRequired
+
+"""-----------------------------------------https://t.me/JosProjects --------------------------------------"""
+
+@Client.on_message(filters.new_chat_members & filters.group)
+async def save_group(bot, message):
+    r_j_check = [u.id for u in message.new_chat_members]
+    if temp.ME in r_j_check:
+        if not await db.get_chat(message.chat.id):
+            total=await bot.get_chat_members_count(message.chat.id)
+            r_j = message.from_user.mention if message.from_user else "Anonymous" 
+            await bot.send_message(LOG_CHANNEL, Script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, r_j))       
+            await db.add_chat(message.chat.id, message.chat.title)
+        if message.chat.id in temp.BANNED_CHATS:
+            # Inspired from a boat of a banana tree
+            buttons = [[
+                InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
+            ]]
+            reply_markup=InlineKeyboardMarkup(buttons)
+            k = await message.reply(
+                text='<b>CHAT NOT ALLOWED 🐞\n\nMy admins has restricted me from working here ! If you want to know more about it contact support..</b>',
+                reply_markup=reply_markup,
+            )
+
+            try:
+                await k.pin()
+            except:
+                pass
+            await bot.leave_chat(message.chat.id)
+            return
         buttons = [[
             InlineKeyboardButton('ℹ️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
-            InlineKeyboardButton('Updates 📢', url='https://t.me/josprojects/221')
+            InlineKeyboardButton('Updates 📢', url='https://t.me/+BixProBUQBo4MWM9')
         ]]
         reply_markup=InlineKeyboardMarkup(buttons)
         await message.reply_text(
@@ -49,7 +103,7 @@ async def save_group(bot, message):
         if settings["welcome"]:
             for u in message.new_chat_members:
                 buttons = [[
-                InlineKeyboardButton('👉 ⚠️ Press me... 🥰 👈', url="https://t.me/josprojects")
+                InlineKeyboardButton('🔔 Join Updates Channel', url="https://t.me/+BixProBUQBo4MWM9")
             ]]
                 if (temp.MELCOW).get('welcome') is not None:
                     try:
@@ -57,7 +111,7 @@ async def save_group(bot, message):
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_text(
-                text=f"<b>👋 Hi! {u.mention},</b> Welcome to <b>{message.chat.title}</b>\n\n<b>👇 Official Projects Channels 👇</b>",
+                text=f'<b>Hello 👋 {u.mention},</b>\n\nWelcome To <b>{message.chat.title} 💐</b>\n\nMy Name Is <b><a href="https://t.me/ItsUniqueMovies2022_Bot">ITS UNIQUE MOVIES BOT</a></b>,<b> I Can Provide Movies/Series In This Group.Just Type The Actual Name Of The Movie/Series.You Will Get The Movie/Series If You Write Correct Spelling.If You Do not Get The Movie/Series It Is Sure That You Have Written Incorrect Spelling Or Your Requested Movie/Series Does Not Exit In My Database 😐.</b>',
                 disable_web_page_preview = True,
                 reply_markup=InlineKeyboardMarkup(buttons))
 
