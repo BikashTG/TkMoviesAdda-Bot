@@ -1,23 +1,23 @@
 class Script(object):
-    START_TXT = """Hello {},
+    START_TXT = """<b><i>Hello👋 {},
 
 My name is <a href=https://t.me/{}>{}</a>!
 
-<b>I can provide Movies. A Telegram Auto Filter Bot. Its Easy To Use Me :)
+I can provide Movies. A Telegram Auto Filter Bot. Its Easy To Use Me :)
 
-Just Add me to Your Group As Admin, Hit The Help Button For More Info..</b>"""
+Hit The ℹ️ Help Button For More Info..</b></i>"""
 
-    HELP_TXT = """Hey {}
+    HELP_TXT = """<b><i>Hello👋 {},
 
-<b>Here Is The Help For My Commands.</b>"""
+Here Is The Help For My Commands.</b></i>"""
 
     ABOUT_TXT = """<b>➥ My name: {}
-➥ Creator: <a href='https://t.me/zautekm'>Zaute Km</a>
+➥ Creator: <a href='https://t.me/BIKASH_9999'>Bikash</a>
 ➥ Library: <a href='https://docs.pyrogram.org/'>Pyrogram</a>
 ➥ Language: Python 𝟹
 ➥ Data Base: <a href='https://www.mongodb.com/'>MongoDB</a>
 ➥ Bot Server: <a href='https://heroku.com'>Heroku</a>
-➥ Build Status: v2.0.1 [ Beta ]"""
+➥ Build Status: v2.0.1 [ Beta ]</b>"""
 
     SOURCE_TXT = """<b>Source:</b>
 IMDb is a Open source project.
