@@ -7,61 +7,7 @@ from database.ia_filterdb import Media
 from utils import get_size, temp, get_settings
 from script import Script
 from pyrogram.errors import ChatAdminRequired
-
-"""-----------------------------------------https://t.me/JosProjects --------------------------------------"""
-
-@Client.on_message(filters.new_chat_members & filters.group)
-async def save_group(bot, message):
-    r_j_check = [u.id for u in message.new_chat_members]
-    if temp.ME in r_j_check:
-        if not await db.get_chat(message.chat.id):
-            total=await bot.get_chat_members_count(message.chat.id)
-            r_j = message.from_user.mention if message.from_user else "Anonymous" 
-            await bot.send_message(LOG_CHANNEL, Script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, r_j))       
-            await db.add_chat(message.chat.id, message.chat.title)
-        if message.chat.id in temp.BANNED_CHATS:
-            # Inspired from a boat of a banana tree
-            buttons = [[
-                InlineKeyboardButton('Support', url=f'https://t.me/{SUPPORT_CHAT}')
-            ]]
-            reply_markup=InlineKeyboardMarkup(buttons)
-            k = await message.reply(
-                text='<b>CHAT NOT ALLOWED 🐞\n\nMy admins has restricted me from working here ! If you want to know more about it contact support..</b>',
-                reply_markup=reply_markup,
-            )
-
-            try:
-                await k.pin()
-            except:
-                pass
-            await bot.leave_chat(message.chat.id)
-            return
-        TGDarkLord
-/
-UniqueMovie-Bot
-Public
-forked from JOSProjects/IMDb-Movie-Bot
-Code
-Pull requests
-Actions
-Projects
-Security
-Insights
-UniqueMovie-Bot/plugins/p_ttishow.py
-@TGDarkLord
-TGDarkLord Update p_ttishow.py
- 2 contributors
-278 lines (257 sloc)  11.4 KB
-from pyrogram import Client, filters
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
-from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS
-from database.users_chats_db import db
-from database.ia_filterdb import Media
-from utils import get_size, temp, get_settings
-from script import Script
-from pyrogram.errors import ChatAdminRequired
-
+  
 """-----------------------------------------https://t.me/JosProjects --------------------------------------"""
 
 @Client.on_message(filters.new_chat_members & filters.group)
