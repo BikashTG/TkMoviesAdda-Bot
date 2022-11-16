@@ -1,22 +1,22 @@
 class Script(object):
-    START_TXT = """<b><i>Hello👋 {},
+    START_TXT = """<i><b>Hello 👋 {},</i></b>
 
-My name is <a href=https://t.me/{}>{}</a> !!
+<i><b>I Am Not Only <a href="https://t.me/NewItsUniqueMovies_Bot">Its Unique Movies Bot</a> To Assist You But Also Employed At <a href="https://t.me/Its_unique_movies_adda">Its Unique Movies</a> Group By <a href="https://t.me/BIKASH_9999">Bikash</a> So You Can't Get My Service By Adding Me To Your Group So Don't Waste Your Time & Data  😉</i></b>
 
-I can provide Movies. Its Easy To Use Me :)
+<i><b>Better You Click Below & Join <a href="https://t.me/Its_unique_movies_adda">Its Unique Movies</a> & Feel The Experience Of Downloading Unlimited Movies/Series ✅</i></b>
 
-For More Information Click ℹ️ Help</b></i>"""
+<i><b>For More Information Click ℹ️ Help</i></b>"""
 
-    HELP_TXT = """<b><i>Hello👋 {},
+    HELP_TXT = """<i><b>Hello 👋 {},</i></b>
 
-Here Is The Help For My Commands.</b></i>"""
+<i><b>I can Guide You Through All Of <a href="https://t.me/NewItsUniqueMovies_Bot">Its Unique Movies Bot</a>'s Cool Features & How To Properly Use Them. Use The Buttons Below To Navigate Through All Of The Modules.</i></b>"""
 
     ABOUT_TXT = """<b>➥ My name: {}
 ➥ Creator: <a href='https://t.me/BIKASH_9999'>Bikash</a>
 ➥ Library: <a href='https://docs.pyrogram.org/'>Pyrogram</a>
 ➥ Language: Python 𝟹
 ➥ Data Base: <a href='https://www.mongodb.com/'>MongoDB</a>
-➥ Bot Server: <a href='https://heroku.com'>Heroku</a>
+➥ Bot Server: <a href='https://vps.com'>Vps</a>
 ➥ Build Status: v2.0.1 [ Beta ]</b>"""
 
     SOURCE_TXT = """<b>Source:</b>
