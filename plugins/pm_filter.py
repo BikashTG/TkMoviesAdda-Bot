@@ -45,7 +45,7 @@ async def next_page(bot, query):
         pass
     elif int(req) not in [query.from_user.id, 0]:
         return await query.answer(
-            "Hello (query.from_user.id) This Is Not Your Message 🤗\n(req) Only Can Use This ✔️",
+            "Hello {query.from_user.mention} This Is Not Your Message 🤗\n\n{req} Only Can Use This ✔️",
             show_alert=True)
     try:
         offset = int(offset)
@@ -377,7 +377,7 @@ ITS UNIQUE MOVIES
             pass
         elif int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(
-                "Hello (query.from_user.id) This Is Not Your Message 🤗\n(req) Only Can Use This ✔️",
+                "Hello {query.from_user.mention} This Is Not Your Message 🤗\n\n{req} Only Can Use This ✔️",
                 show_alert=True)
 
         if not files_:
