@@ -377,7 +377,7 @@ ITS UNIQUE MOVIES
             pass
         elif int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(
-                "All right, but this is not yours.;\nNice Try! But, This Was Not Your Request, Request Yourself;",
+                "Hello (query.from_user.id) This Is Not Your Message 🤗\n(req) Only Can Use This ✔️",
                 show_alert=True)
 
         if not files_:
