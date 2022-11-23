@@ -9,3 +9,5 @@ def is_enabled(value, default):
         return False
     else:
         return default
+
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>
