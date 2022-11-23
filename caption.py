@@ -10,4 +10,13 @@ def is_enabled(value, default):
     else:
         return default
 
-IMDB_CAPTION = environ.get("IMDB_CAPTION", "<b>
+IMDB_CAPTION = environ.get("IMDB_CAPTION", "# Imdb Caption 🗯️\n<b>☊ 𝐅𝐢𝐥𝐦 :</b> 
+📅 𝐘𝐞𝐚𝐫 : 
+🔊 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞 : 
+💿 𝐐𝐮𝐚𝐥𝐢𝐭𝐲 :
+🕐 𝐓𝐢𝐦𝐞 : 
+🌟 𝐌𝐨𝐯𝐢𝐞 𝐑𝐚𝐭𝐢𝐧𝐠 : 
+🏙 𝐂𝐨𝐮𝐧𝐭𝐫𝐲 : 
+
+
+🔘𝐉𝐨𝐢𝐧
