@@ -485,7 +485,7 @@ Phonepe 📲 Soon...
             text=Script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
@@ -522,7 +522,7 @@ Phonepe 📲 Soon...
         await query.message.edit_text(
             text=Script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "about":
         buttons = [[
@@ -534,7 +534,7 @@ Phonepe 📲 Soon...
             text=Script.ABOUT_TXT.format(temp.B_NAME),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "torrent":
         buttons = [[
@@ -546,7 +546,7 @@ Phonepe 📲 Soon...
             text=Script.TORRENT_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "source":
         buttons = [[
@@ -557,7 +557,7 @@ Phonepe 📲 Soon...
             text=Script.SOURCE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "manualfilter":
         buttons = [[
@@ -571,7 +571,7 @@ Phonepe 📲 Soon...
             text=Script.MANUALFILTER_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "button":
         buttons = [[
@@ -582,7 +582,7 @@ Phonepe 📲 Soon...
             text=Script.BUTTON_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "autofilter":
         buttons = [[
@@ -593,7 +593,7 @@ Phonepe 📲 Soon...
             text=Script.AUTOFILTER_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "auto_manual":
         buttons = [[
@@ -608,7 +608,7 @@ Phonepe 📲 Soon...
             text=Script.AUTO_MANUAL_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "coct":
         buttons = [[
@@ -619,7 +619,7 @@ Phonepe 📲 Soon...
             text=Script.CONNECTION_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "paste":
         buttons = [[
@@ -631,7 +631,7 @@ Phonepe 📲 Soon...
             text=Script.PASTE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "tgraph":
         buttons = [[
@@ -642,7 +642,7 @@ Phonepe 📲 Soon...
             text=Script.TGRAPH_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "info":
         buttons = [[
@@ -653,7 +653,7 @@ Phonepe 📲 Soon...
             text=Script.INFO_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "search":
         buttons = [[
@@ -664,7 +664,7 @@ Phonepe 📲 Soon...
             text=Script.SEARCH_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "gtrans":
         buttons = [[
@@ -676,7 +676,7 @@ Phonepe 📲 Soon...
             text=Script.GTRANS_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "admin":
         buttons = [[
@@ -687,7 +687,7 @@ Phonepe 📲 Soon...
             text=Script.ADMIN_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "zombies":
         buttons = [[
@@ -698,7 +698,7 @@ Phonepe 📲 Soon...
             text=Script.ZOMBIES_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "purge":
         buttons = [[
@@ -709,7 +709,7 @@ Phonepe 📲 Soon...
             text=Script.PURGE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "restric":
         buttons = [[
@@ -720,7 +720,7 @@ Phonepe 📲 Soon...
             text=Script.RESTRIC_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "memes":
         buttons = [[
@@ -731,7 +731,7 @@ Phonepe 📲 Soon...
             text=Script.MEMES_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "shortner":
         buttons = [[
@@ -742,7 +742,7 @@ Phonepe 📲 Soon...
             text=Script.URL_SHORTNER_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "tts":
         buttons = [[
@@ -753,7 +753,7 @@ Phonepe 📲 Soon...
             text=Script.TTS_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "pin":
         buttons = [[
@@ -764,7 +764,7 @@ Phonepe 📲 Soon...
             text=Script.PIN_MESSAGE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "music":
         buttons = [[
@@ -775,7 +775,7 @@ Phonepe 📲 Soon...
             text=Script.MUSIC_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "genpassword":
         buttons = [[
@@ -786,7 +786,7 @@ Phonepe 📲 Soon...
             text=Script.PASSWORD_GEN_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "sharetext":
         buttons = [[
@@ -797,7 +797,7 @@ Phonepe 📲 Soon...
             text=Script.SHARE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "fillings":
         buttons = [[
@@ -808,7 +808,7 @@ Phonepe 📲 Soon...
             text=Script.FILLINGS_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data == "stats":
         buttons = [[
@@ -826,7 +826,7 @@ Phonepe 📲 Soon...
         await query.message.edit_text(
             text=Script.STATUS_TXT.format(total, users, chats, monsize, free),
             reply_markup=reply_markup,
-            parse_mode='html'
+            parse_mode=enums.ParseMode.HTML
         )
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
