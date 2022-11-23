@@ -10,4 +10,4 @@ def is_enabled(value, default):
     else:
         return default
 
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>
+IMDB_CAPTION = environ.get("IMDB_CAPTION", "<b>
