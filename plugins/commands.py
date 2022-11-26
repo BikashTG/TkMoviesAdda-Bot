@@ -60,7 +60,7 @@ async def start(client, message):
             chat_id=message.from_user.id,
             text=Script.FORCESUB_TXT,
             reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode="markdown"
+            parse_mode=enums.ParseMode.HTML
             )
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
