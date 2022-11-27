@@ -485,7 +485,7 @@ Phonepe 📲 Soon...
             text=Script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
@@ -957,7 +957,7 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, [
         InlineKeyboardButton(text="ミ★ UNIQUE MOVIES ★彡", callback_data="rsrq"),
     ]) 
-    reply_id = message.reply_to_message.id if message.reply_to_message else message.id
+    reply_id = message.reply_to_message_id if message.reply_to_message else message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
     if imdb:
