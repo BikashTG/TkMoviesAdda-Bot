@@ -12,7 +12,7 @@ from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GRO
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.handlers import CallbackQueryHandler
-from pyrogram import Client, filters, enums
+from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
 from database.users_chats_db import db
@@ -720,7 +720,7 @@ Phonepe 📲 Soon...
             text=Script.RESTRIC_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data == "memes":
         buttons = [[
@@ -731,7 +731,7 @@ Phonepe 📲 Soon...
             text=Script.MEMES_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data == "shortner":
         buttons = [[
@@ -742,7 +742,7 @@ Phonepe 📲 Soon...
             text=Script.URL_SHORTNER_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data == "tts":
         buttons = [[
@@ -753,7 +753,7 @@ Phonepe 📲 Soon...
             text=Script.TTS_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data == "pin":
         buttons = [[
@@ -764,7 +764,7 @@ Phonepe 📲 Soon...
             text=Script.PIN_MESSAGE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data == "music":
         buttons = [[
@@ -775,7 +775,7 @@ Phonepe 📲 Soon...
             text=Script.MUSIC_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data == "genpassword":
         buttons = [[
@@ -786,7 +786,7 @@ Phonepe 📲 Soon...
             text=Script.PASSWORD_GEN_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data == "sharetext":
         buttons = [[
@@ -797,7 +797,7 @@ Phonepe 📲 Soon...
             text=Script.SHARE_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data == "fillings":
         buttons = [[
@@ -808,7 +808,7 @@ Phonepe 📲 Soon...
             text=Script.FILLINGS_TXT,
             disable_web_page_preview=True,
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data == "stats":
         buttons = [[
@@ -826,7 +826,7 @@ Phonepe 📲 Soon...
         await query.message.edit_text(
             text=Script.STATUS_TXT.format(total, users, chats, monsize, free),
             reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
+            parse_mode='html'
         )
     elif query.data.startswith("setgs"):
         ident, set_type, status, grp_id = query.data.split("#")
