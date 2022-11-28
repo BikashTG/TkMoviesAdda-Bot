@@ -1,5 +1,3 @@
-import datetime
-import pytz
 import os
 import logging
 import random
@@ -33,25 +31,13 @@ async def start(client, message):
             InlineKeyboardButton(text='About 🤠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        now=datetime.datetime.now()
-        tz=pytz.timezone('Asia/Kolkata')
-        yn=now.astimezone(tz)
-        hour=yn.hour
-        if hour < 12:
-          wish="Good Morning"
-        elif hour < 15:
-          wish="Good Afternoon"
-        elif hour < 20:
-          wish="Good Evening"
-        else:
-          wish="Good Night"
         await message.reply_chat_action("typing")
         m=await message.reply_sticker("CAACAgUAAxkBAAEFgzxi8nst3-JNMI8lpeiEGoiX8ZuNnQACkgQAAkOCMFZOKrTnrmt1EikE") 
         await asyncio.sleep(0.3)
         await m.delete()
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=Script.START_TXT.format(message.from_user.mention, wish, temp.U_NAME, temp.B_NAME),
+            caption=Script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
         )
