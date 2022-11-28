@@ -31,9 +31,12 @@ BUTTONS = {}
 SPELL_CHECK = {}
 
 
-@Client.on_message(filters.group & filters.text & filters.chat(-1001510283128) & filters.incoming)
+@Client.on_message(filters.group & filters.text & filters.chat(-1001510283128) & ~filters.edited & filters.incoming)
 async def give_filter(client, message):
+    k = await manual_filters(client, message)
+    if k == False:
         await auto_filter(client, message)
+
 
 @Client.on_callback_query(filters.regex(r"^next"))
 async def next_page(bot, query):
@@ -87,12 +90,12 @@ async def next_page(bot, query):
             for file in files
         ]
 
-    if 0 < offset <= 10:
+    if 0 < offset <= 5:
         off_set = 0
     elif offset == 0:
         off_set = None
     else:
-        off_set = offset - 10
+        off_set = offset - 5
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("🔙 Back Page", callback_data=f"next_{req}_{key}_{off_set}"),
