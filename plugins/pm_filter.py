@@ -2,6 +2,7 @@
 import asyncio
 import re
 import ast
+import pytz
 
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from script import Script
@@ -497,7 +498,7 @@ Phonepe 📲 Soon...
         await asyncio.sleep(0.3)
         await m.delete()
         await query.message.edit_text(
-            text=Script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            text=Script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME, greeting),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
