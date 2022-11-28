@@ -37,7 +37,7 @@ def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
 
-@Client.on_message(filters.command(["song", "music", "mp3"]) & ~filters.channel)
+@Client.on_message(filters.command(["song"]) & ~filters.channel & ~filters.edited)
 def a(client, message: Message):
     urlissed = get_text(message)
     query = ''
@@ -69,7 +69,7 @@ def a(client, message: Message):
             #     m.edit("Exceeded 30mins cap")
             #     return
 
-            performer = f"[Zaute Km]" 
+            performer = f"[MR.Lucifer]" 
             thumb_name = f'thumb{message.message_id}.jpg'
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, 'wb').write(thumb.content)
@@ -99,7 +99,7 @@ def a(client, message: Message):
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**An Error Occured. Please Report This To @JOSPSupport !!**')
+        m.edit('**An Error Occured. Please Report admin !!**')
         print(e)
     try:
         os.remove(audio_file)
@@ -248,7 +248,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(filters.command(["vsong", "video", "mp4"]))
+@Client.on_message(filters.command(["video"]))
 async def vsong(client, message: Message):
     urlissed = get_text(message)
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
