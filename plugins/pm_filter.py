@@ -2,6 +2,7 @@
 import asyncio
 import re
 import ast
+import datetime 
 import pytz
 
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
@@ -478,7 +479,7 @@ Phonepe 📲 Soon...
             InlineKeyboardButton('🔗 Unique Movies', url=f'https://t.me/Its_unique_movies_adda')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('About 🤠', callback_data='about')
+            InlineKeyboardButton(text='About 🤠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         now=datetime.datetime.now()
@@ -540,18 +541,19 @@ Phonepe 📲 Soon...
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "about":
-        buttons = [[
-            InlineKeyboardButton('« Back', callback_data='start'),
-            InlineKeyboardButton('Close ✗', callback_data='close')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=Script.ABOUT_TXT.format(temp.B_NAME),
-            disable_web_page_preview=True,
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
+    elif "about" in query.data:
+        return await query.answer("""
+꧁֍UNIQUE MOVIE BOT֍꧂
+
+🤴 Creator: MR.Lucifer
+❖ Language: Python3
+❖ Hosted: Vps
+❖ Version: 2.0.1 [BETA]
+❖ Farmework: Pyrogram
+❖ Database: MongoDB
+֎ Bot: Indian 🇮🇳
+""", show_alert=True)
+
     elif query.data == "torrent":
         buttons = [[
             InlineKeyboardButton('« Back', callback_data='help'),
