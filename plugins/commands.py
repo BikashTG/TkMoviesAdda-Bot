@@ -30,7 +30,7 @@ async def start(client, message):
             InlineKeyboardButton('🔗 Unique Movies', url=f'https://t.me/Its_unique_movies_adda')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('About 🤠', callback_data='about')
+            InlineKeyboardButton(text='About 🤠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         now=datetime.datetime.now()
@@ -86,7 +86,7 @@ async def start(client, message):
             InlineKeyboardButton('🔗 Unique Movies', url=f'https://t.me/Its_unique_movies_adda')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('About 🤠', callback_data='about')
+            InlineKeyboardButton(text='About 🤠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         now=datetime.datetime.now()
