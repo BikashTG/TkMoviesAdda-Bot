@@ -33,8 +33,6 @@ SPELL_CHECK = {}
 
 @Client.on_message(filters.group & filters.text & filters.chat(-1001510283128) & ~filters.edited & filters.incoming)
 async def give_filter(client, message):
-    k = await manual_filter(client, message)
-    if k == False:
         await auto_filter(client, message)
 
 
