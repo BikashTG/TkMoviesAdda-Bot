@@ -487,19 +487,19 @@ Phonepe 📲 Soon...
         yn=now.astimezone(tz)
         hour=yn.hour
         if hour < 12:
-          greeting="Good Morning"
+          wish="Good Morning"
         elif hour < 15:
-          greeting="Good Afternoon"
+          wish="Good Afternoon"
         elif hour < 20:
-          greeting="Good Evening"
+          wish="Good Evening"
         else:
-          greeting="Good Night"
+          wish="Good Night"
         await message.reply_chat_action("typing")
         m=await message.reply_sticker("CAACAgUAAxkBAAEFgzxi8nst3-JNMI8lpeiEGoiX8ZuNnQACkgQAAkOCMFZOKrTnrmt1EikE") 
         await asyncio.sleep(0.3)
         await m.delete()
         await query.message.edit_text(
-            text=Script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME, greeting),
+            text=Script.START_TXT.format(query.from_user.mention, wish, temp.U_NAME, temp.B_NAME),
             disable_web_page_preview=True,
             reply_markup=reply_markup,
             parse_mode='html'
