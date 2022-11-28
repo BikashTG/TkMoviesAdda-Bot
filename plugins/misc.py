@@ -53,14 +53,14 @@ async def showid(client, message):
             quote=True
         )
 
-@Client.on_message(filters.command(["info", "whois"]))
+@Client.on_message(filters.command(["info"]))
 async def who_is(client, message):
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
     status_message = await message.reply_text(
         "`Fetching user info...`"
     )
     await status_message.edit(
-        "`Processing user info...`"
+        "`Processing user info...👤`"
     )
     from_user = None
     from_user_id, _ = extract_user(message)
