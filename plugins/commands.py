@@ -1,3 +1,5 @@
+import datetime
+import pytz
 import os
 import logging
 import random
@@ -31,9 +33,25 @@ async def start(client, message):
             InlineKeyboardButton('About 🤠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        now=datetime.datetime.now()
+        tz=pytz.timezone('Asia/Kolkata')
+        yn=now.astimezone(tz)
+        hour=yn.hour
+        if hour < 12:
+          greeting="Good Morning"
+        elif hour < 15:
+          greeting="Good Afternoon"
+        elif hour < 20:
+          greeting="Good Evening"
+        else:
+          greeting="Good Night"
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        m=await message.reply_sticker("CAACAgUAAxkBAAEFgzxi8nst3-JNMI8lpeiEGoiX8ZuNnQACkgQAAkOCMFZOKrTnrmt1EikE") 
+        await asyncio.sleep(0.3)
+        await m.delete()
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=Script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=Script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME, greeting),
             reply_markup=reply_markup,
             parse_mode='html'
         )
@@ -55,7 +73,7 @@ async def start(client, message):
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
             pre = 'checksubp' if kk == 'filep' else 'checksub' 
-            btn.append([InlineKeyboardButton("🔄 Try Again 👈 Tap me 🥰", callback_data=f"{pre}#{file_id}")])
+            btn.append([InlineKeyboardButton("🔄 Try Again", callback_data=f"{pre}#{file_id}")])
         await client.send_message(
             chat_id=message.from_user.id,
             text=Script.FORCESUB_TXT,
@@ -71,9 +89,25 @@ async def start(client, message):
             InlineKeyboardButton('About 🤠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
+        now=datetime.datetime.now()
+        tz=pytz.timezone('Asia/Kolkata')
+        yn=now.astimezone(tz)
+        hour=yn.hour
+        if hour < 12:
+          greeting="Good Morning"
+        elif hour < 15:
+          greeting="Good Afternoon"
+        elif hour < 20:
+          greeting="Good Evening"
+        else:
+          greeting="Good Night"
+        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        m=await message.reply_sticker("CAACAgUAAxkBAAEFgzxi8nst3-JNMI8lpeiEGoiX8ZuNnQACkgQAAkOCMFZOKrTnrmt1EikE") 
+        await asyncio.sleep(0.3)
+        await m.delete()
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=Script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=Script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME, greeting),
             reply_markup=reply_markup,
             parse_mode='html'
         )
