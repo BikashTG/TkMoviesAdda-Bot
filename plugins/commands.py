@@ -45,7 +45,7 @@ async def start(client, message):
           greeting="Good Evening"
         else:
           greeting="Good Night"
-        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await message.reply_chat_action("typing")
         m=await message.reply_sticker("CAACAgUAAxkBAAEFgzxi8nst3-JNMI8lpeiEGoiX8ZuNnQACkgQAAkOCMFZOKrTnrmt1EikE") 
         await asyncio.sleep(0.3)
         await m.delete()
@@ -101,7 +101,7 @@ async def start(client, message):
           greeting="Good Evening"
         else:
           greeting="Good Night"
-        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
+        await message.reply_chat_action("typing")
         m=await message.reply_sticker("CAACAgUAAxkBAAEFgzxi8nst3-JNMI8lpeiEGoiX8ZuNnQACkgQAAkOCMFZOKrTnrmt1EikE") 
         await asyncio.sleep(0.3)
         await m.delete()
