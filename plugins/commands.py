@@ -3,7 +3,7 @@ import logging
 import random
 import asyncio
 from script import Script
-from pyrogram import Client, filters, enums 
+from pyrogram import Client, filters
 from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
@@ -31,7 +31,6 @@ async def start(client, message):
             InlineKeyboardButton(text='About 🤠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
         m=await message.reply_sticker("CAACAgUAAxkBAAEFgzxi8nst3-JNMI8lpeiEGoiX8ZuNnQACkgQAAkOCMFZOKrTnrmt1EikE") 
         await asyncio.sleep(0.3)
         await m.delete()
