@@ -44,7 +44,7 @@ async def next_page(bot, query):
         pass
     elif int(req) not in [query.from_user.id, 0]:
         return await query.answer(
-            "Hello This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ ITS UNIQUE MOVIES",
+            "Hello This Is Not Your Message 🤗\n\nRequest Your Own ✍️\n\n©️ TK ENTERTAINMENT",
             show_alert=True)
     try:
         offset = int(offset)
@@ -121,7 +121,7 @@ async def next_page(bot, query):
                 InlineKeyboardButton("Next Page ➡", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0, [
-        InlineKeyboardButton(text="ミ★ UNIQUE MOVIES ★彡", callback_data="rsrq"),
+        InlineKeyboardButton(text="ミ★ TK ENTERTAINMENT ★彡", callback_data="rsrq"),
     ])
     btn.insert(0, [
         InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")
@@ -293,14 +293,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         return await query.answer('Piracy Is Crime')
     elif "rsrq" in query.data:
         return await query.answer("""
-ミ★ UNIQUE MOVIES ★彡
+ミ★ TK ENTERTAINMENT ★彡
 
 ☞ Sᴛᴏʀᴀɢᴇ Oғ Nᴇᴡ & Oʟᴅ Mᴏᴠɪᴇs/Sᴇʀɪᴇs
 ☞ Aᴠᴀɪʟᴀʙʟᴇ Iɴ Mᴀɴʏ Sɪᴢᴇs & Lᴀɴɢᴜᴀɢᴇs
 ☞ Rᴇᴄᴇɪᴠᴀʙʟᴇ Iɴ Vᴀʀɪᴏᴜs Qᴜᴀʟɪᴛʏ
 
 👑
-UNIQUE MOVIES 
+Mr.Lucifer
 """, show_alert=True)
 
     elif "deletecb" in query.data:
@@ -474,7 +474,7 @@ Phonepe 📲 Soon...
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('🔗 Unique Movies', url=f'https://t.me/Its_unique_movies_adda')
+            InlineKeyboardButton('🔗 Tk Entertainment', url=f'https://t.me/Its_unique_movies_adda')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton(text='About 🤠', callback_data='about')
@@ -529,7 +529,7 @@ Phonepe 📲 Soon...
         )
     elif "about" in query.data:
         return await query.answer("""
-꧁֍UNIQUE MOVIE BOT֍꧂
+꧁֍TK ENTERTAINMENT BOT֍꧂
 
 🤴 Creator: MR.Lucifer
 ❖ Language: Python3
@@ -959,7 +959,7 @@ async def auto_filter(client, msg, spoll=False):
                 [InlineKeyboardButton(text="🤖 Check Bot PM 🤖", url=f"https://t.me/{temp.U_NAME}")]
         )
     btn.insert(0, [
-        InlineKeyboardButton(text="ミ★ UNIQUE MOVIES ★彡", callback_data="rsrq"),
+        InlineKeyboardButton(text="ミ★ TK ENTERTAINMENT ★彡", callback_data="rsrq"),
     ]) 
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
