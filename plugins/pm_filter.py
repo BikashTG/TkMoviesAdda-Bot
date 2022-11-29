@@ -12,7 +12,7 @@ from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GRO
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram.handlers import CallbackQueryHandler
-from pyrogram import Client, filters, enums
+from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
 from utils import get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
 from database.users_chats_db import db
@@ -480,7 +480,6 @@ Phonepe 📲 Soon...
             InlineKeyboardButton(text='About 🤠', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await client.send_chat_action(message.chat.id, enums.ChatAction.TYPING)
         m=await message.reply_sticker("CAACAgUAAxkBAAEFgzxi8nst3-JNMI8lpeiEGoiX8ZuNnQACkgQAAkOCMFZOKrTnrmt1EikE") 
         await asyncio.sleep(0.3)
         await m.delete()
