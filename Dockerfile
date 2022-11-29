@@ -6,7 +6,7 @@ COPY requirements.txt /requirements.txt
 
 RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /UniqueMovie-Bot
-WORKDIR /UniqueMovie-Bot
+RUN mkdir /TkMoviesAdda-Bot
+WORKDIR /TkMoviesAdda-Bot
 COPY start.sh /start.sh
 CMD ["/bin/bash", "/start.sh"]
