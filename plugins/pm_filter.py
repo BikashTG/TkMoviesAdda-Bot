@@ -1011,10 +1011,10 @@ async def auto_filter(client, msg, spoll=False):
             await hmm.delete()
         except Exception as e:
             logger.exception(e)
-            fek = await message.reply_photo(photo="https://telegra.ph/file/b21d8ae65b687e2f5fb50.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            fek = await message.reply_photo(photo="https://telegra.ph/file/c79fc37709f8a03f86ceb.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(1200)
             await fek.delete()
     else:
-        fuk = await message.reply_photo(photo="https://telegra.ph/file/b21d8ae65b687e2f5fb50.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+        fuk = await message.reply_photo(photo="https://telegra.ph/file/c79fc37709f8a03f86ceb.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(1200)
         await fuk.delete()
