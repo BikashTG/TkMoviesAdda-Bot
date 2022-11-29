@@ -1,4 +1,4 @@
-Pyrogram==1.4.16
+git+https://github.com/ZauteKm/Pyrogram@master-zip
 tgcrypto
 pymongo[srv]
 motor
