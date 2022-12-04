@@ -23,7 +23,7 @@ PICS = (environ.get('PICS', 'https://telegra.ph/file/913f9af3d11d8c0306043.jpg')
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '953377581 996210989 5630723610').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001893064616').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001822275183').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '953377581 996210989 5179203555').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 ADMINS.append(1684438752)
@@ -33,12 +33,12 @@ AUTH_CHANNEL = environ.get('AUTH_CHANNEL', '-1001506877410')
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Lucifer:Heart@cluster0.q0yw5bh.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "Luciferji")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Balmiki:Balmiki@cluster0.lmden.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Balmiki")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001817519178'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001646581413'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Tk_movies_adda')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
